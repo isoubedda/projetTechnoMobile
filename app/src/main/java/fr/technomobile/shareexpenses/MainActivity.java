@@ -24,7 +24,8 @@ public class MainActivity extends AppCompatActivity {
         allGroup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // TODO
+                Intent newGroupActivity = new Intent(getApplicationContext(),SelectGroupActivity.class);
+                startActivity(newGroupActivity);
             }
         });
 

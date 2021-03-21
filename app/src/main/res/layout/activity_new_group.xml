@@ -22,7 +22,7 @@
             android:layout_weight="1">
 
             <ImageButton
-                android:id="@+id/imgBtnBefore"
+                android:id="@+id/actNewGroupImgBtnBefore"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="#00FFFFFF"
@@ -36,7 +36,7 @@
             android:layout_weight="1">
 
             <Button
-                android:id="@+id/btnSuivant"
+                android:id="@+id/actNewGroupBtnSuivant"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="end"
@@ -129,12 +129,15 @@
             android:id="@+id/listViewParticipantNom"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
-
-
+            app:layout_constraintTop_toTopOf="parent"
+            android:divider="@null"
+            android:dividerHeight="10dp"
+            />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </LinearLayout>

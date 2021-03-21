@@ -1,9 +1,6 @@
 package fr.technomobile.shareexpenses;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.lifecycle.ViewModel;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.ContentResolver;
 import android.database.Cursor;
@@ -22,7 +19,6 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import fr.technomobile.shareexpenses.adapters.ParticipantAdapter;
 import fr.technomobile.shareexpenses.model.ListeParicipantModel;
@@ -39,8 +35,6 @@ public class NewGroupActivity extends AppCompatActivity implements  OnItemClickL
     // list of participant
     public static ArrayList<ListeParicipantModel> participantValue = new ArrayList<ListeParicipantModel>();
     private ParticipantAdapter adapterParticipant;
-    Integer indexVal;
-    String nameParticipant;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,7 +42,7 @@ public class NewGroupActivity extends AppCompatActivity implements  OnItemClickL
         setContentView(R.layout.activity_new_group);
 
         //back to before Activity
-        ImageButton btnBack = (ImageButton) findViewById(R.id.imgBtnBefore);
+        ImageButton btnBack = (ImageButton) findViewById(R.id.actNewGroupImgBtnBefore);
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
