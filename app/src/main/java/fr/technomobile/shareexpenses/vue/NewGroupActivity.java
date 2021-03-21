@@ -1,6 +1,7 @@
 package fr.technomobile.shareexpenses.vue;
 
 import android.content.ContentResolver;
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.provider.ContactsContract;
@@ -12,6 +13,8 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -37,6 +40,8 @@ public class NewGroupActivity extends AppCompatActivity implements  OnItemClickL
     public static ArrayList<ListeParicipantModel> participantValue = new ArrayList<ListeParicipantModel>();
     private ParticipantAdapter adapterParticipant;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,6 +56,25 @@ public class NewGroupActivity extends AppCompatActivity implements  OnItemClickL
             }
         });
 
+        EditText txtGroupNom = (EditText) findViewById(R.id.editTxtGroupeNom);
+        Button btnSuivant = (Button) findViewById(R.id.actNewGroupBtnSuivant);
+        btnSuivant.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(txtGroupNom.getText().toString().isEmpty()){
+                    Toast.makeText(getBaseContext(), "veuillez choisir un nom pour votre groupe !", Toast.LENGTH_LONG).show();
+            }else{
+                    // get group name of the item the user clicked on from groupNames array
+                    String groupeName = txtGroupNom.getText().toString();
+
+                    //test : Toast.makeText(getBaseContext(), "Nom "+groupeName, Toast.LENGTH_LONG).show();
+                    // create an intent to launch the HandleOnGroupClickActivity, pass the gName along
+                    Intent intent = new Intent(NewGroupActivity.this,HomeActivity.class);
+                    intent.putExtra("groupeName",groupeName);
+                    startActivity(intent);
+                }
+            }
+        });
         // AutoCompleteTextView
         searchTextView = (AutoCompleteTextView) findViewById(R.id.searchViewParticipantNom);
         // Create contact adapter

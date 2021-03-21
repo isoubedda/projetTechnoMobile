@@ -24,7 +24,9 @@
             android:textAlignment="center"
             android:textColor="@color/green_500"
             android:textSize="24sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:shadowColor="#101310"
+            android:shadowRadius="10"/>
     </LinearLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout

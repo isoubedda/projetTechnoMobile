@@ -8,9 +8,12 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="status_bar">#496366</color>
+    <color name="tool_bar">#425A5D</color>
+    <color name="colorTabLayout">#394D4F</color>
     <color name="application">#2B3F41</color>
     <color name="txtButton">#FFFFFF</color>
     <color name="color1">#DF2B1E</color>
     <color name="color2">#03A9F4</color>
     <color name="BtnBackgroundColor">#C5F68C</color>
+    <color name="tabLayoutTextColor">#F8F8F8</color>
 </resources>
