@@ -6,14 +6,16 @@
 
     <application
         android:allowBackup="true"
+        android:fullBackupContent="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ShareExpenses">
-        <activity android:name=".SelectGroupActivity"></activity>
-        <activity android:name=".NewGroupActivity"></activity>
-        <activity android:name=".MainActivity">
+        <activity android:name=".vue.HomeActivity"></activity>
+        <activity android:name=".vue.SelectGroupActivity" />
+        <activity android:name=".vue.NewGroupActivity" />
+        <activity android:name=".vue.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

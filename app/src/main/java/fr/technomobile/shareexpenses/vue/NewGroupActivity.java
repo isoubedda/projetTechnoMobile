@@ -1,25 +1,26 @@
-package fr.technomobile.shareexpenses;
-
-import androidx.appcompat.app.AppCompatActivity;
+package fr.technomobile.shareexpenses.vue;
 
 import android.content.ContentResolver;
 import android.database.Cursor;
+import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.util.Log;
+import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.AdapterView.OnItemSelectedListener;
-import android.os.Bundle;
-import android.provider.ContactsContract;
-import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import java.util.ArrayList;
 
+import fr.technomobile.shareexpenses.R;
 import fr.technomobile.shareexpenses.adapters.ParticipantAdapter;
 import fr.technomobile.shareexpenses.model.ListeParicipantModel;
 

@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/application"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".vue.MainActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -36,6 +36,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
+            android:padding="10dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -46,11 +47,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:background="@drawable/rounded_corners"
+                android:padding="5dp"
                 android:text="@string/txtButtonNewGroup"
                 android:textAllCaps="false"
                 android:textColor="@color/txtButton"
                 android:textSize="24sp"
-                app:cornerRadius="10dp" />
+                android:gravity="center"
+                android:shadowColor="#090808"
+                android:shadowDx="8"
+                android:shadowRadius="8"
+                />
 
             <Space
                 android:layout_width="match_parent"
@@ -61,11 +68,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:background="@drawable/rounded_corners"
                 android:text="@string/txtButtonAllGroups"
+                android:padding="5dp"
                 android:textAllCaps="false"
                 android:textColor="@color/txtButton"
                 android:textSize="24sp"
-                app:cornerRadius="10dp" />
+                android:gravity="center"
+                android:shadowColor="#090808"
+                android:shadowDx="8"
+                android:shadowRadius="8"
+                 />
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -1,10 +1,12 @@
-package fr.technomobile.shareexpenses;
-
-import androidx.appcompat.app.AppCompatActivity;
+package fr.technomobile.shareexpenses.vue;
 
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import fr.technomobile.shareexpenses.R;
 
 public class SelectGroupActivity extends AppCompatActivity {
 

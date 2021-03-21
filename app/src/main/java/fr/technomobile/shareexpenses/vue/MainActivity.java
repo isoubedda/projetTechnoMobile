@@ -1,12 +1,13 @@
-package fr.technomobile.shareexpenses;
+package fr.technomobile.shareexpenses.vue;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.app.ActionBar;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import fr.technomobile.shareexpenses.R;
 
 public class MainActivity extends AppCompatActivity {
 

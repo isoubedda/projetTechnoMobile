@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/application"
     android:orientation="vertical"
-    tools:context=".NewGroupActivity">
+    tools:context=".vue.NewGroupActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -41,8 +41,16 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="end"
                 android:layout_marginRight="10dp"
+                android:background="@drawable/rounded_corners"
+                android:textColor="#FFFFFF"
                 android:gravity="center"
-                android:text="@string/TextBtnSuivant" />
+                android:shadowColor="#090808"
+                android:shadowDx="8"
+                android:shadowRadius="8"
+                android:text="@string/TextBtnSuivant"
+                android:textAlignment="center"
+                android:textSize="14sp"
+                android:textStyle="bold"  />
         </FrameLayout>
 
     </LinearLayout>
