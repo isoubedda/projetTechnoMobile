@@ -5,65 +5,68 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/application"
+    android:orientation="vertical"
     tools:context=".NewGroupActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="wrap_content"
+        android:baselineAligned="false"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingTop="10dp">
 
-        <LinearLayout
+        <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:orientation="horizontal"
-            android:paddingTop="10dp">
+            android:layout_weight="1">
 
-            <FrameLayout
-                android:layout_width="match_parent"
+            <ImageButton
+                android:id="@+id/imgBtnBefore"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1">
+                android:background="#00FFFFFF"
+                android:paddingLeft="10dp"
+                app:srcCompat="@drawable/abc_vector_test" />
+        </FrameLayout>
 
-                <ImageButton
-                    android:id="@+id/imgBtnBefore"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="#00FFFFFF"
-                    android:paddingLeft="10dp"
-                    app:srcCompat="@drawable/abc_vector_test" />
-            </FrameLayout>
-
-            <FrameLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:paddingRight="10dp">
-
-                <Button
-                    android:id="@+id/btnSuivant"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="end"
-                    android:gravity="center"
-                    android:text="@string/TextBtnSuivant" />
-            </FrameLayout>
-
-        </LinearLayout>
-
-        <LinearLayout
+        <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_weight="1">
+
+            <Button
+                android:id="@+id/btnSuivant"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginRight="10dp"
+                android:gravity="center"
+                android:text="@string/TextBtnSuivant" />
+        </FrameLayout>
+
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
             <TextView
                 android:id="@+id/txtViewNomGroupe"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_margin="10dp"
                 android:fontFamily="sans-serif-medium"
                 android:gravity="center"
-                android:paddingTop="20dp"
-                android:paddingEnd="5dp"
                 android:text="@string/textTxtViewNomGroupe"
                 android:textAlignment="center"
                 android:textColor="@color/green_500"
@@ -72,23 +75,66 @@
 
             <EditText
                 android:id="@+id/editTxtGroupeNom"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop="10dp"
-                android:layout_weight="1"
+                android:autofillHints="Nom"
                 android:background="#000000"
-                android:capitalize="none"
                 android:cursorVisible="true"
                 android:ems="10"
                 android:gravity="center"
                 android:inputType="textPersonName"
-                android:padding="10dp"
-                android:textColor="#898080"
+                android:padding="4dp"
+                android:textColor="#E1FBC2"
                 android:textIsSelectable="false"
                 android:textSize="24sp"
                 android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtViewParticipant"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="center"
+                android:text="@string/textTxtViewParticipant"
+                android:textAlignment="center"
+                android:textColor="@color/green_500"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <AutoCompleteTextView
+                android:id="@+id/searchViewParticipantNom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#000000"
+                android:popupBackground="#90AC6E"
+                android:shadowColor="#3B4331"
+                android:textColor="#E1FBC2"
+                android:textColorHighlight="#90AC6E"
+                android:textColorLink="#898080"
+                android:gravity="center"
+                android:padding="4dp"
+                android:textSize="24sp"
+                android:textStyle="bold" />
         </LinearLayout>
-    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="3">
+
+        <ListView
+            android:id="@+id/listViewParticipantNom"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </LinearLayout>

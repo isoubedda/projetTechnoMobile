@@ -1,7 +1,9 @@
 <resources>
     <string name="app_name">ShareExpenses</string>
-    <string name="txtButtonNouveauGroupe">Nouveau groupe</string>
+    <string name="txtButtonNewGroup">Nouveau groupe</string>
     <string name="txtLogo">Les bons comptes font les bons amis !</string>
     <string name="TextBtnSuivant">SUIVANT</string>
     <string name="textTxtViewNomGroupe">Nom du groupe :</string>
+    <string name="textTxtViewParticipant">Participant :</string>
+    <string name="txtButtonAllGroups">Groupes</string>
 </resources>
