@@ -13,6 +13,11 @@ public class ContactModel {
         this.name = name;
     }
 
+    public ContactModel(String name)
+    {
+        this.name = name;
+    }
+
     public ContactModel(long id_contact, String name, int percent) {
         this.id_contact = id_contact;
         this.name = name;

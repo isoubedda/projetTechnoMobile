@@ -13,18 +13,17 @@ import android.widget.TextView;
 import android.app.AlertDialog;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import fr.technomobile.shareexpenses.R;
-import fr.technomobile.shareexpenses.model.ListeParicipantModel;
+import fr.technomobile.shareexpenses.model.ContactModel;
 
-public class ParticipantAdapter extends BaseAdapter {
+public class ContactAdapter extends BaseAdapter {
 
     private Context context;
-    private ArrayList<ListeParicipantModel> participantValue;
+    private ArrayList<ContactModel> participantValue;
     LayoutInflater inflater;
 
-    public ParticipantAdapter (Context context, ArrayList<ListeParicipantModel> participantValue){
+    public ContactAdapter(Context context, ArrayList<ContactModel> participantValue){
         this.context = context;
         this.participantValue = participantValue;
         this.inflater = LayoutInflater.from(context);
@@ -36,7 +35,7 @@ public class ParticipantAdapter extends BaseAdapter {
     }
 
     @Override
-    public ListeParicipantModel getItem(int i) {
+    public ContactModel getItem(int i) {
         return participantValue.get(i);
     }
 
@@ -49,7 +48,7 @@ public class ParticipantAdapter extends BaseAdapter {
     public View getView(int i, View view, ViewGroup viewGroup) {
         view = inflater.inflate(R.layout.adapter_participant,null);
 
-        ListeParicipantModel currentValue = getItem(i);
+        ContactModel currentValue = getItem(i);
 
         TextView adapterTxtView = view.findViewById(R.id.adapterTxtView);
         ImageView imgRemove = view.findViewById(R.id.adapterImgDelete);
@@ -63,21 +62,24 @@ public class ParticipantAdapter extends BaseAdapter {
             }
         });
         final String[] m_Text = {""};
+
+
+        // change name of an contact
         imgUpdate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
                 final AlertDialog.Builder[] builder = {new AlertDialog.Builder(context)};
-                builder[0].setTitle("Changer le nom");
+                builder[0].setTitle("Changer le nom :");
 
-// Set up the input
+                // Set up the input
                 final EditText input = new EditText(context);
-// Specify the type of input expected; this, for example, sets the input as a password, and will mask the text
+                // Specify the type of input expected; this, for example, sets the input as a password, and will mask the text
                 input.setInputType(InputType.TYPE_CLASS_TEXT);
                 input.setText(participantValue.get(i).getName());
                 builder[0].setView(input);
 
-// Set up the buttons
+                // Set up the buttons
                 builder[0].setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {

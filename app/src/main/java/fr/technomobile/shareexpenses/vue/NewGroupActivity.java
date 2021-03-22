@@ -24,8 +24,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.util.ArrayList;
 
 import fr.technomobile.shareexpenses.R;
-import fr.technomobile.shareexpenses.adapters.ParticipantAdapter;
-import fr.technomobile.shareexpenses.model.ListeParicipantModel;
+import fr.technomobile.shareexpenses.adapters.ContactAdapter;
+import fr.technomobile.shareexpenses.model.ContactModel;
 
 public class NewGroupActivity extends AppCompatActivity implements  OnItemClickListener, OnItemSelectedListener {
 
@@ -37,10 +37,8 @@ public class NewGroupActivity extends AppCompatActivity implements  OnItemClickL
 
     ListView listeViewParticipant;
     // list of participant
-    public static ArrayList<ListeParicipantModel> participantValue = new ArrayList<ListeParicipantModel>();
-    private ParticipantAdapter adapterParticipant;
-
-
+    public static ArrayList<ContactModel> participantValue = new ArrayList<ContactModel>();
+    private ContactAdapter adapterParticipant;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -91,7 +89,7 @@ public class NewGroupActivity extends AppCompatActivity implements  OnItemClickL
 
         listeViewParticipant = (ListView) findViewById(R.id.listViewParticipantNom);
         // setup de liste view
-        adapterParticipant = new ParticipantAdapter(this,participantValue);
+        adapterParticipant = new ContactAdapter(this,participantValue);
         //ArrayAdapter<String>(this, android.R.layout.,participantValue);
         listeViewParticipant.setAdapter(adapterParticipant);
     }
@@ -100,7 +98,6 @@ public class NewGroupActivity extends AppCompatActivity implements  OnItemClickL
     // Read phone contact name
     private void readContactFromPhone() {
         try {
-            String phoneNumbe = "";
             ContentResolver cr = getBaseContext().getContentResolver();
 
             //get contact name
@@ -119,9 +116,9 @@ public class NewGroupActivity extends AppCompatActivity implements  OnItemClickL
                     nameValue.add(name.toString());
                     j++;
 
-                }  // End while loop
+                }
 
-            } // End Cursor value check
+            }
             cur.close();
 
         } catch (Exception e) {
@@ -135,7 +132,6 @@ public class NewGroupActivity extends AppCompatActivity implements  OnItemClickL
     public void onItemSelected(AdapterView<?> arg0, View arg1, int position,
                                long arg3) {
         // TODO Auto-generated method stub
-        //Log.d("AutocompleteContacts", "onItemSelected() position " + position);
     }
 
     @Override
@@ -171,14 +167,11 @@ public class NewGroupActivity extends AppCompatActivity implements  OnItemClickL
                 k--;
             }
             if(exist == false){
-                ListeParicipantModel md = new ListeParicipantModel(arg0.getItemAtPosition(arg2).toString());
+                ContactModel md = new ContactModel(arg0.getItemAtPosition(arg2).toString());
                 participantValue.add(md);
                 adapterParticipant.notifyDataSetChanged();
                 searchTextView.setText("");
             }
-
-            // Show Alert
-            //Toast.makeText(getBaseContext(), "Position:"+arg2+" Name:"+arg0.getItemAtPosition(arg2), Toast.LENGTH_LONG).show();
 
         }
 
