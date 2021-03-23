@@ -66,9 +66,9 @@ public class NewGroupActivity extends AppCompatActivity implements  OnItemClickL
                     String groupeName = txtGroupNom.getText().toString();
 
                     //test : Toast.makeText(getBaseContext(), "Nom "+groupeName, Toast.LENGTH_LONG).show();
-                    // create an intent to launch the HandleOnGroupClickActivity, pass the gName along
+                    // create an intent to pass group name to homeactivity
                     Intent intent = new Intent(NewGroupActivity.this,HomeActivity.class);
-                    intent.putExtra("groupeName",groupeName);
+                    intent.putExtra("STRING_NAME_GROUP",groupeName);
                     startActivity(intent);
                 }
             }

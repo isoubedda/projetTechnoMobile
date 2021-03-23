@@ -12,48 +12,35 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:baselineAligned="false"
-        android:gravity="center"
+        android:gravity="left"
         android:orientation="horizontal"
         android:paddingTop="10dp">
 
-        <FrameLayout
-            android:layout_width="match_parent"
+        <ImageButton
+            android:id="@+id/actSelectImgBtnBefore"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1">
-
-            <ImageButton
-                android:id="@+id/actSelectImgBtnBefore"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="#00FFFFFF"
-                android:paddingLeft="10dp"
-                app:srcCompat="@drawable/abc_vector_test" />
-        </FrameLayout>
-
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1">
-
-            <Button
-                android:id="@+id/actSelectBtnSuivant"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="end"
-                android:layout_marginRight="10dp"
-                android:background="@drawable/rounded_corners"
-                android:textColor="#FFFFFF"
-                android:gravity="center"
-                android:shadowColor="#090808"
-                android:shadowDx="8"
-                android:shadowRadius="8"
-                android:text="@string/TextBtnSuivant"
-                android:textAlignment="center"
-                android:textSize="14sp"
-                android:textStyle="bold" />
-        </FrameLayout>
+            android:layout_gravity="left"
+            android:background="#00FFFFFF"
+            android:paddingLeft="10dp"
+            app:srcCompat="@drawable/abc_vector_test" />
 
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/actSelectTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="15dp"
+        android:fontFamily="sans-serif-black"
+        android:shadowColor="#101310"
+        android:shadowRadius="10"
+        android:text="@string/selectionner_un_groupe"
+        android:textAlignment="center"
+        android:textColor="@color/green_500"
+        android:textSize="24sp"
+        android:textStyle="bold" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
