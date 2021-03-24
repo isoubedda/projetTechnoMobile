@@ -82,11 +82,11 @@ public class DepenseModel
         this.getEmetteurs().add(em);
     };
 
-    public double calculContactCredit(long contact_id)
+    public double calculContactCredit(String contact)
     {
         for(int i = 0; i<this.getDestinaires().size(); i++)
         {
-            if(this.getDestinaires().get(i).getId_contact()==contact_id)
+            if(this.getDestinaires().get(i).getName().equalsIgnoreCase(contact))
             {
                 return this.getDestinaires().get(i).getBenefit();
             }
@@ -94,11 +94,11 @@ public class DepenseModel
         return 0;
     };
 
-    public double calculContactMoney(long contact_id)
+    public double calculContactMoney(String contact)
     {
         for(int i = 0; i<this.getEmetteurs().size(); i++)
         {
-            if(this.getEmetteurs().get(i).getId_contact()==contact_id)
+            if(this.getEmetteurs().get(i).getName().equalsIgnoreCase(contact))
             {
                 return this.getEmetteurs().get(i).getMoney();
             }

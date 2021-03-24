@@ -42,8 +42,8 @@ public class BalanceFragment extends Fragment {
      * @return A new instance of fragment ContactsFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static ContactsFragment newInstance(GroupModel gm) {
-        ContactsFragment fragment = new ContactsFragment();
+    public static BalanceFragment newInstance(GroupModel gm) {
+        BalanceFragment fragment = new BalanceFragment();
         Bundle args = new Bundle();
         args.putParcelable(ARG_PARAM1, gm);
         fragment.setArguments(args);
@@ -65,7 +65,7 @@ public class BalanceFragment extends Fragment {
         gm = getArguments().getParcelable(ARG_PARAM1);
         fragmentBalanceListView = view.findViewById(R.id.fragmentBalanceListView);
 
-        adapterBalance = new BalanceTabViewAdapter(gm.getDepense(), getActivity().getApplication(),this);
+        adapterBalance = new BalanceTabViewAdapter(gm.getContacts(),gm, getActivity().getApplication(),this);
         //Toast.makeText(getActivity().getApplication(), "veuillez :" + gm.getContacts().get(1).getName(), Toast.LENGTH_LONG).show();
         fragmentBalanceListView.setAdapter(adapterBalance);
         adapterBalance.notifyDataSetChanged();

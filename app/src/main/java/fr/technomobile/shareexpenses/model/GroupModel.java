@@ -65,33 +65,33 @@ public class GroupModel implements Parcelable
         }
     }
 
-    public double calculContactCredit(long contact_id)
+    public double calculContactCredit(String contact)
     {
         double sum_credit = 0;
 
         for(int i = 0; i<this.getDepense().size(); i++)
         {
-            sum_credit+= this.getDepense().get(i).calculContactCredit(contact_id);
+            sum_credit+= this.getDepense().get(i).calculContactCredit(contact);
         }
 
         return sum_credit;
     }
 
-    public double calculContactMoney(long contact_id)
+    public double calculContactMoney(String contact)
     {
         double sum_credit = 0;
 
         for(int i = 0; i<this.getDepense().size(); i++)
         {
-            sum_credit+= this.getDepense().get(i).calculContactMoney(contact_id);
+            sum_credit+= this.getDepense().get(i).calculContactMoney(contact);
         }
 
         return sum_credit;
     }
 
-    public double getBalance(long contact_id)
+    public double getBalance(String contact)
     {
-        double balance = this.calculContactCredit(contact_id) - this.calculContactMoney(contact_id);
+        double balance = this.calculContactCredit(contact) - this.calculContactMoney(contact);
         return balance;
     }
 

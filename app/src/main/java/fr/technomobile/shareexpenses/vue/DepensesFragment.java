@@ -44,8 +44,8 @@ public class DepensesFragment extends Fragment {
      * @return A new instance of fragment ContactsFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static ContactsFragment newInstance(GroupModel gm) {
-        ContactsFragment fragment = new ContactsFragment();
+    public static DepensesFragment newInstance(GroupModel gm) {
+        DepensesFragment fragment = new DepensesFragment();
         Bundle args = new Bundle();
         args.putParcelable(ARG_PARAM1, gm);
         fragment.setArguments(args);
