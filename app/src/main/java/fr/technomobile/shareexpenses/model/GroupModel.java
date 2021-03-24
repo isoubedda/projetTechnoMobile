@@ -105,4 +105,11 @@ public class GroupModel implements Parcelable
         parcel.writeString(name);
         parcel.writeTypedList(contacts);
     }
+
+    public ArrayList<DepenseModel> exportList(){
+        return  getDepense();
+    }
+    public void importList(ArrayList<DepenseModel> dep){
+        this.setDepense(dep);
+    }
 }

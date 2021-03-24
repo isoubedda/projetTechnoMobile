@@ -12,11 +12,14 @@ import android.widget.Toast;
 
 import com.google.android.material.tabs.TabLayout;
 
+import java.util.Date;
 import java.util.List;
 
 import fr.technomobile.shareexpenses.R;
 import fr.technomobile.shareexpenses.adapters.ViewPagerAdapter;
+import fr.technomobile.shareexpenses.controller.GroupController;
 import fr.technomobile.shareexpenses.model.ContactModel;
+import fr.technomobile.shareexpenses.model.DepenseModel;
 import fr.technomobile.shareexpenses.model.GroupModel;
 
 public class HomeActivity extends AppCompatActivity {
@@ -45,6 +48,8 @@ public class HomeActivity extends AppCompatActivity {
             getSupportActionBar().setElevation(0);
         }
         setTitle(gm.getName());
+
+
 
         // create adapter for viewpager and add fragments, group name and title to adapter
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
