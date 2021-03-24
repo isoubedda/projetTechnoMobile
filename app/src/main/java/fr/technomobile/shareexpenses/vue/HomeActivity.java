@@ -50,8 +50,8 @@ public class HomeActivity extends AppCompatActivity {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
 
         adapter.addFragment(ContactsFragment.newInstance(gm),"Contacts");
-        adapter.addFragment(DepensesFragment.newInstance(gm.getName()),"Depenses");
-        adapter.addFragment(BalanceFragment.newInstance(gm.getName()),"Balance");
+        adapter.addFragment(DepensesFragment.newInstance(gm),"Depenses");
+        adapter.addFragment(BalanceFragment.newInstance(gm),"Balance");
 
         viewPager.setAdapter(adapter);
         tabLayout.setupWithViewPager(viewPager);

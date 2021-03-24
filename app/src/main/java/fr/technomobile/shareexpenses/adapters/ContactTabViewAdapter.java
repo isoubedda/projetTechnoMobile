@@ -52,7 +52,7 @@ public class ContactTabViewAdapter extends BaseAdapter {
         view = inflater.inflate(R.layout.adapter_participant,null);
         ContactModel currentValue = getItem(i);
 
-        TextView adapterTxtView = view.findViewById(R.id.adapterTxtView);
+        TextView adapterTxtView = view.findViewById(R.id.adapterDepensesTxtTitre);
         ImageView imgRemove = view.findViewById(R.id.adapterImgDelete);
         ImageView imgUpdate  = view.findViewById(R.id.adapterImgUpdate);
 

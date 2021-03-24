@@ -105,4 +105,14 @@ public class DepenseModel
         }
         return 0;
     };
+
+    public String calculTotal()
+    {
+        int s = 0;
+        for(int i = 0; i<this.getEmetteurs().size(); i++)
+        {
+            s = this.getEmetteurs().get(i).getMoney() + s;
+        }
+        return " "+s+" Euro";
+    };
 }

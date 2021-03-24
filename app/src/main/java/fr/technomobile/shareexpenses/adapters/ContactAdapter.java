@@ -50,7 +50,7 @@ public class ContactAdapter extends BaseAdapter {
 
         ContactModel currentValue = getItem(i);
 
-        TextView adapterTxtView = view.findViewById(R.id.adapterTxtView);
+        TextView adapterTxtView = view.findViewById(R.id.adapterDepensesTxtTitre);
         ImageView imgRemove = view.findViewById(R.id.adapterImgDelete);
         ImageView imgUpdate  = view.findViewById(R.id.adapterImgUpdate);
 
