@@ -26,6 +26,7 @@ import java.util.ArrayList;
 import fr.technomobile.shareexpenses.R;
 import fr.technomobile.shareexpenses.adapters.ContactAdapter;
 import fr.technomobile.shareexpenses.model.ContactModel;
+import fr.technomobile.shareexpenses.model.GroupModel;
 
 public class NewGroupActivity extends AppCompatActivity implements  OnItemClickListener, OnItemSelectedListener {
 
@@ -39,6 +40,7 @@ public class NewGroupActivity extends AppCompatActivity implements  OnItemClickL
     // list of participant
     public static ArrayList<ContactModel> participantValue = new ArrayList<ContactModel>();
     private ContactAdapter adapterParticipant;
+    private GroupModel gm;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,14 +64,18 @@ public class NewGroupActivity extends AppCompatActivity implements  OnItemClickL
                 if(txtGroupNom.getText().toString().isEmpty()){
                     Toast.makeText(getBaseContext(), "veuillez choisir un nom pour votre groupe !", Toast.LENGTH_LONG).show();
             }else{
-                    // get group name of the item the user clicked on from groupNames array
-                    String groupeName = txtGroupNom.getText().toString();
-
-                    //test : Toast.makeText(getBaseContext(), "Nom "+groupeName, Toast.LENGTH_LONG).show();
-                    // create an intent to pass group name to homeactivity
-                    Intent intent = new Intent(NewGroupActivity.this,HomeActivity.class);
-                    intent.putExtra("STRING_NAME_GROUP",groupeName);
-                    startActivity(intent);
+                    if(participantValue.size()<2){
+                        Toast.makeText(getBaseContext(), "veuillez ajouter au moins deux participants §", Toast.LENGTH_LONG).show();
+                    }else {
+                        // get group name of the item the user clicked on from groupNames array
+                        String groupeName = txtGroupNom.getText().toString();
+                        gm = new GroupModel(groupeName);
+                        gm.setContacts(participantValue);
+                        // create an intent to pass group object to homeactivity
+                        Intent intent = new Intent(NewGroupActivity.this, HomeActivity.class);
+                        intent.putExtra("OBJECT_NAME_GROUP", gm);
+                        startActivity(intent);
+                    }
                 }
             }
         });

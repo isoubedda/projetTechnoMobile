@@ -1,6 +1,9 @@
 package fr.technomobile.shareexpenses.model;
 
-public class ContactModel {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class ContactModel implements Parcelable {
     private long id_contact;
     private String name;
     private int benefit;
@@ -31,6 +34,22 @@ public class ContactModel {
         this.benefit = contact.benefit;
         this.money = contact.money;
     }
+
+    protected ContactModel(Parcel in) {
+        name = in.readString();
+    }
+
+    public static final Creator<ContactModel> CREATOR = new Creator<ContactModel>() {
+        @Override
+        public ContactModel createFromParcel(Parcel in) {
+            return new ContactModel(in);
+        }
+
+        @Override
+        public ContactModel[] newArray(int size) {
+            return new ContactModel[size];
+        }
+    };
 
     public long getId_contact() {
         return id_contact;
@@ -65,4 +84,13 @@ public class ContactModel {
         this.money = money;
     }
 
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel parcel, int i) {
+        parcel.writeString(name);
+    }
 }

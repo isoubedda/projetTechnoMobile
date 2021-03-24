@@ -1,17 +1,37 @@
 package fr.technomobile.shareexpenses.model;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class GroupModel
+public class GroupModel implements Parcelable
 {
     private String name;
-    private List<ContactModel> contacts = new ArrayList<ContactModel>();
-    private List<DepenseModel> depense = new ArrayList<DepenseModel>();
+    private ArrayList<ContactModel> contacts = new ArrayList<ContactModel>();
+    private ArrayList<DepenseModel> depense = new ArrayList<DepenseModel>();
 
     public GroupModel(String name) {
         this.name = name;
     }
+
+    protected GroupModel(Parcel in) {
+        name = in.readString();
+        in.readTypedList(contacts, ContactModel.CREATOR);
+    }
+
+    public static final Creator<GroupModel> CREATOR = new Creator<GroupModel>() {
+        @Override
+        public GroupModel createFromParcel(Parcel in) {
+            return new GroupModel(in);
+        }
+
+        @Override
+        public GroupModel[] newArray(int size) {
+            return new GroupModel[size];
+        }
+    };
 
     public String getName() {
         return name;
@@ -21,19 +41,19 @@ public class GroupModel
         this.name = name;
     }
 
-    public List<ContactModel> getContacts() {
+    public ArrayList<ContactModel> getContacts() {
         return contacts;
     }
 
-    public void setContacts(List<ContactModel> contacts) {
+    public void setContacts(ArrayList<ContactModel> contacts) {
         this.contacts = contacts;
     }
 
-    public List<DepenseModel> getDepense() {
+    public ArrayList<DepenseModel> getDepense() {
         return depense;
     }
 
-    public void setDepense(List<DepenseModel> depense) {
+    public void setDepense(ArrayList<DepenseModel> depense) {
         this.depense = depense;
     }
 
@@ -75,4 +95,14 @@ public class GroupModel
         return balance;
     }
 
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel parcel, int i) {
+        parcel.writeString(name);
+        parcel.writeTypedList(contacts);
+    }
 }

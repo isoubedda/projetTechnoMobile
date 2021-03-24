@@ -17,7 +17,7 @@
         app:tabMode="fixed"
         android:id="@+id/tabHomeLayoutActivity"
         app:tabTextColor="@color/tabLayoutTextColor"
-        app:tabIndicatorColor="@color/tabLayoutTextColor"
+        app:tabIndicatorColor="@color/tabLayoutIndicatorColor"
         android:background="@color/colorTabLayout">
     </com.google.android.material.tabs.TabLayout>
 

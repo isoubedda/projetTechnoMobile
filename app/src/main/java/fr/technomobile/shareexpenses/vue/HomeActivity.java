@@ -16,6 +16,8 @@ import java.util.List;
 
 import fr.technomobile.shareexpenses.R;
 import fr.technomobile.shareexpenses.adapters.ViewPagerAdapter;
+import fr.technomobile.shareexpenses.model.ContactModel;
+import fr.technomobile.shareexpenses.model.GroupModel;
 
 public class HomeActivity extends AppCompatActivity {
 
@@ -26,11 +28,12 @@ public class HomeActivity extends AppCompatActivity {
 
         // get name of the group from intent
         Intent intent = getIntent();
-        String groupeName = intent.getStringExtra("STRING_NAME_GROUP");
+        GroupModel gm = intent.getParcelableExtra("OBJECT_NAME_GROUP");
 
-        Toast.makeText(getBaseContext(), "le nom du groupe est :"+groupeName, Toast.LENGTH_LONG).show();
-
-
+        String contact = intent.getStringExtra("STRING_NAME_NEW_GROUP");
+        if(contact != null) {
+            gm.getContacts().add(new ContactModel(contact));
+        }
         TabLayout tabLayout = findViewById(R.id.tabHomeLayoutActivity);
         ViewPager viewPager = findViewById(R.id.viewHomePagerActivity);
 
@@ -41,14 +44,14 @@ public class HomeActivity extends AppCompatActivity {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             getSupportActionBar().setElevation(0);
         }
-        setTitle(groupeName);
+        setTitle(gm.getName());
 
         // create adapter for viewpager and add fragments, group name and title to adapter
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
 
-        adapter.addFragment(ContactsFragment.newInstance(groupeName),"Contacts");
-        adapter.addFragment(DepensesFragment.newInstance(groupeName),"Depenses");
-        adapter.addFragment(BalanceFragment.newInstance(groupeName),"Balance");
+        adapter.addFragment(ContactsFragment.newInstance(gm),"Contacts");
+        adapter.addFragment(DepensesFragment.newInstance(gm.getName()),"Depenses");
+        adapter.addFragment(BalanceFragment.newInstance(gm.getName()),"Balance");
 
         viewPager.setAdapter(adapter);
         tabLayout.setupWithViewPager(viewPager);
@@ -65,4 +68,5 @@ public class HomeActivity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
 }

@@ -10,4 +10,6 @@
     <string name="selectionner_un_groupe">Sélectionner un groupe :</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="ajouter_un_contact">Ajouter un contact</string>
+    <string name="actAddContactTxtButton">Ajouter</string>
 </resources>

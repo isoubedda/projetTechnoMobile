@@ -12,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ShareExpenses">
-        <activity android:name=".vue.HomeActivity"></activity>
+        <activity android:name=".vue.AddContactActivity"></activity>
+        <activity android:name=".vue.HomeActivity" />
         <activity android:name=".vue.SelectGroupActivity" />
         <activity android:name=".vue.NewGroupActivity" />
         <activity android:name=".vue.MainActivity">

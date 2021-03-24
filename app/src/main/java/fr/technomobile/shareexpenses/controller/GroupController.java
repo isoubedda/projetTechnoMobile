@@ -25,6 +25,7 @@ public class GroupController
         return this.group;
     }
 
+
     public GroupModel addDepenseToGroup(DepenseModel depense)
     {
         this.group.getDepense().add(depense);

@@ -1,6 +1,7 @@
 package fr.technomobile.shareexpenses.adapters;
 
-import android.content.Context;
+import android.app.AlertDialog;
+import android.app.Application;
 import android.content.DialogInterface;
 import android.text.InputType;
 import android.view.LayoutInflater;
@@ -10,23 +11,25 @@ import android.widget.BaseAdapter;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.app.AlertDialog;
 
 import java.util.ArrayList;
 
 import fr.technomobile.shareexpenses.R;
 import fr.technomobile.shareexpenses.model.ContactModel;
+import fr.technomobile.shareexpenses.vue.ContactsFragment;
 
-public class ContactAdapter extends BaseAdapter {
+public class ContactTabViewAdapter extends BaseAdapter {
 
-    private Context context;
     private ArrayList<ContactModel> participantValue;
+    private Application application;
+    private ContactsFragment contactsFragment;
     LayoutInflater inflater;
 
-    public ContactAdapter(Context context, ArrayList<ContactModel> participantValue){
-        this.context = context;
+    public ContactTabViewAdapter(ArrayList<ContactModel> participantValue, Application application, ContactsFragment contactsFragment) {
         this.participantValue = participantValue;
-        this.inflater = LayoutInflater.from(context);
+        this.application = application;
+        this.contactsFragment = contactsFragment;
+        this.inflater = LayoutInflater.from(application.getApplicationContext());
     }
 
     @Override
@@ -47,12 +50,12 @@ public class ContactAdapter extends BaseAdapter {
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
         view = inflater.inflate(R.layout.adapter_participant,null);
-
         ContactModel currentValue = getItem(i);
 
         TextView adapterTxtView = view.findViewById(R.id.adapterTxtView);
         ImageView imgRemove = view.findViewById(R.id.adapterImgDelete);
         ImageView imgUpdate  = view.findViewById(R.id.adapterImgUpdate);
+
 
         imgRemove.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,16 +65,15 @@ public class ContactAdapter extends BaseAdapter {
             }
         });
 
-        // change name of an contact
         imgUpdate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                final AlertDialog.Builder[] builder = {new AlertDialog.Builder(context)};
+                final AlertDialog.Builder[] builder = {new AlertDialog.Builder(application.getApplicationContext())};
                 builder[0].setTitle("Changer le nom :");
 
                 // Set up the input
-                final EditText input = new EditText(context);
+                final EditText input = new EditText(application.getApplicationContext());
                 // Specify the type of input expected; this, for example, sets the input as a password, and will mask the text
                 input.setInputType(InputType.TYPE_CLASS_TEXT);
                 input.setText(participantValue.get(i).getName());
