@@ -3,6 +3,7 @@ package fr.technomobile.shareexpenses.adapters;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.text.InputType;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,6 +19,8 @@ import java.util.ArrayList;
 
 import fr.technomobile.shareexpenses.R;
 import fr.technomobile.shareexpenses.model.GroupModel;
+import fr.technomobile.shareexpenses.vue.HomeActivity;
+import fr.technomobile.shareexpenses.vue.NewGroupActivity;
 
 public class GroupAdapter extends BaseAdapter {
 
@@ -106,7 +109,16 @@ public class GroupAdapter extends BaseAdapter {
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(context ,"Selected : " + currentValue.getName(),Toast.LENGTH_SHORT).show();
+                //Toast.makeText(context ,"Selected : " + currentValue.getName(),Toast.LENGTH_SHORT).show();
+                // get group name of the item the user clicked on from groupNames array
+                String groupeName = currentValue.getName();
+                GroupModel gm;
+                gm = new GroupModel(groupeName);
+                // create an intent to pass group object to homeactivity
+                Intent intent = new Intent(context, HomeActivity.class);
+                intent.putExtra("OBJECT_NAME_GROUP", gm);
+                context.startActivity(intent);
+
             }
         });
         return view;

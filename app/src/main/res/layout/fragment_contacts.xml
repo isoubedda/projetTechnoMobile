@@ -4,8 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".vue.ContactsFragment"
-    android:background="@color/application">
+    android:background="@color/application"
+    android:padding="20dp"
+    tools:context=".vue.ContactsFragment">
 
     <!-- TODO: Update blank fragment layout -->
 
@@ -15,6 +16,7 @@
         android:layout_height="match_parent"
         android:divider="@null"
         android:dividerHeight="10dp"
+        android:minHeight="40dp"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
         app:layout_constraintBottom_toBottomOf="parent"

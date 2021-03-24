@@ -28,6 +28,12 @@ public class DepenseModel
         this.titre = titre;
     }
 
+    public DepenseModel( String titre,Date date)
+    {
+        this.date = date;
+        this.titre = titre;
+    }
+
     public long getId_depense() {
         return id_depense;
     }

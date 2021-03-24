@@ -65,7 +65,7 @@ public class AddContactActivity extends AppCompatActivity implements  OnItemClic
         Intent intent = getIntent();
         GroupModel gm = intent.getParcelableExtra("OBJECT_NAME_GROUP");
 
-         Button btnAdd = (Button) findViewById(R.id.actAddContactButton);
+         Button btnAdd = (Button) findViewById(R.id.actAddDepensesButton);
          btnAdd.setOnClickListener(new View.OnClickListener() {
          @Override
              public void onClick(View view) {

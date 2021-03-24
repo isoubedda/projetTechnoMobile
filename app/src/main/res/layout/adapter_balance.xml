@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="20dp"
+    android:layout_margin="10dp"
     android:orientation="horizontal">
 
 
@@ -11,7 +11,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1.5"
-        android:background="#90AC6E">
+        android:background="#90AC6E"
+        >
 
         <TextView
             android:id="@+id/adapterBalanceNigative"
@@ -19,9 +20,10 @@
             android:layout_height="wrap_content"
             android:shadowColor="#0D100D"
             android:shadowRadius="10"
-            android:text="-100"
             android:textColor="#890202"
-            android:textSize="22sp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textSize="18sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -41,22 +43,21 @@
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:background="#90AC6E"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        >
 
         <TextView
             android:id="@+id/adapterBalanceContact"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="40dp"
+            android:layout_height="match_parent"
             android:layout_weight="1"
+            android:layout_gravity="center"
+            android:gravity="center"
             android:shadowColor="#8DAB8D"
             android:shadowRadius="10"
-            android:text="Nom"
             android:textColor="#030403"
-            android:textSize="22sp"
+            android:textSize="18sp"
             android:textStyle="bold"
-            android:gravity="center"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -72,17 +73,19 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1.5"
-        android:background="#90AC6E">
+        android:background="#90AC6E"
+        >
 
         <TextView
             android:id="@+id/adapterBalancePositive"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
             android:shadowColor="#152315"
             android:shadowRadius="10"
-            android:text="+100"
             android:textColor="#07077F"
-            android:textSize="22sp"
+            android:textSize="18sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

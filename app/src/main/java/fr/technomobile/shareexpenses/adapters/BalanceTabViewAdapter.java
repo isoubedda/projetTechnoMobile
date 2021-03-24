@@ -59,8 +59,8 @@ public class BalanceTabViewAdapter extends BaseAdapter {
 
         adapterTxtViewContact.setText(currentValue.getName());
         double total = groupModel.getBalance(currentValue.getName());
-        String chaine = total+" Euro";
-        if (total<=0){
+        String chaine = total+"";
+        if (total<0){
             adapterTxtViewNigative.setText(chaine);
         } else{
             adapterTxtViewPositive.setText(chaine);

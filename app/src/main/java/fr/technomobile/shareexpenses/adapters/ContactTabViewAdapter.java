@@ -57,6 +57,7 @@ public class ContactTabViewAdapter extends BaseAdapter {
         ImageView imgUpdate  = view.findViewById(R.id.adapterImgUpdate);
 
 
+
         imgRemove.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -103,7 +104,6 @@ public class ContactTabViewAdapter extends BaseAdapter {
 
 
         adapterTxtView.setText(currentValue.getName());
-
         return view;
     }
 }
